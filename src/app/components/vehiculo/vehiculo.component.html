@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1>{{title}}</h1>
+            <div class="alert alert-danger col-md-5 mt-3" *ngIf="status == 'error'">
+                El registro no se ha completado, vuelve más tarde
+            </div>
+            <form action="" class="col-md-5 ml-0 pl0" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+                <div class="form-grout">
+                    <label for="placa">Placa</label>
+                    <input type="text" name="placa" class="form-control" #placa="ngModel"
+                        [(ngModel)]="vehiculo.placa" required>
+
+                    <small *ngIf="!placa.valid && placa.touched" class="invalid-feedback d-block">
+                        La placa no es válida o se encuentra ya registrada
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="color">Color</label>
+                    <input type="text" name="color" class="form-control" #color="ngModel"
+                        [(ngModel)]="vehiculo.color" required pattern="[a-zA-Z]+">
+
+                    <small *ngIf="!color.valid && color.touched" class="invalid-feedback d-block">
+                        El color no es válido
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="marca">Marca</label>
+                    <input type="text" name="marca" class="form-control" #marca="ngModel"
+                        [(ngModel)]="vehiculo.marca" required pattern="[a-zA-Z]+">
+
+                    <small *ngIf="!marca.valid && marca.touched" class="invalid-feedback d-block">
+                        La marca no e válida
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="tipo_vehiculo">Tipo de vehiculo</label>
+                    <input type="text" name="tipo_vehiculo" class="form-control" #tipo_vehiculo="ngModel"
+                        [(ngModel)]="vehiculo.tipo_vehiculo" required>
+
+                    <small *ngIf="!tipo_vehiculo.valid && tipo_vehiculo.touched" class="invalid-feedback d-block">
+                        El tipo vehiculo no es válido
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="conductor">Conductor</label>
+                    <input type="text" name="conductor" class="form-control" #conductor="ngModel"
+                        [(ngModel)]="vehiculo.conductor" required>
+
+                    <small *ngIf="!conductor.valid && conductor.touched" class="invalid-feedback d-block">
+                        El conductor no es válido
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="propietario">propietario</label>
+                    <input type="text" name="propietario" class="form-control" #propietario="ngModel"
+                        [(ngModel)]="vehiculo.propietario" required>
+
+                    <small *ngIf="!propietario.valid && propietario.touched" class="invalid-feedback d-block">
+                        El propietario no es válida
+                    </small>
+                </div>
+                <br>
+                <input type="submit" value="Registrarme" class="btn btn-success"
+                    [disabled]="registerForm.invalid" />
+            </form>
+        </div>
+    </div>
+</div>

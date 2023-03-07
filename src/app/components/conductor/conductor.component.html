@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1>{{title}}</h1>
+            <div class="alert alert-danger col-md-5 mt-3" *ngIf="status == 'error'">
+                El registro no se ha completado, vuelve más tarde
+            </div>
+            <form action="" class="col-md-5 ml-0 pl0" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+                <div class="form-grout">
+                    <label for="name">Primer Nombre</label>
+                    <input type="text" name="primer_nombre" class="form-control" #primer_nombre="ngModel"
+                        [(ngModel)]="conductor.primer_nombre" required pattern="[a-zA-Z]+">
+
+                    <small *ngIf="!primer_nombre.valid && primer_nombre.touched" class="invalid-feedback d-block">
+                        El nombre no es válido
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="segundo_nombre">Segundo nombre</label>
+                    <input type="text" name="segundo_nombre" class="form-control" #segundo_nombre="ngModel"
+                        [(ngModel)]="conductor.segundo_nombre" required pattern="[a-zA-Z]+">
+
+                    <small *ngIf="!segundo_nombre.valid && segundo_nombre.touched" class="invalid-feedback d-block">
+                        El segundo nombre no es válido
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" class="form-control" #apellidos="ngModel"
+                        [(ngModel)]="conductor.apellidos" required pattern="[a-zA-Z]+">
+
+                    <small *ngIf="!apellidos.valid && apellidos.touched" class="invalid-feedback d-block">
+                        Los apellidos no son válidos
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="direccion">direccion</label>
+                    <input type="text" name="direccion" class="form-control" #direccion="ngModel"
+                        [(ngModel)]="conductor.direccion" required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+                    <small *ngIf="!direccion.valid && direccion.touched" class="invalid-feedback d-block">
+                        La direccion no es válida
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="telefono">telefono</label>
+                    <input type="text" name="telefono" class="form-control" #telefono="ngModel"
+                        [(ngModel)]="conductor.telefono" required>
+
+                    <small *ngIf="!telefono.valid && telefono.touched" class="invalid-feedback d-block">
+                        El telefono no es válido
+                    </small>
+                </div>
+                <div class="form-grout">
+                    <label for="ciudad">ciudad</label>
+                    <input type="text" name="ciudad" class="form-control" #ciudad="ngModel"
+                        [(ngModel)]="conductor.ciudad" required>
+
+                    <small *ngIf="!ciudad.valid && ciudad.touched" class="invalid-feedback d-block">
+                        La ciudad no es válida
+                    </small>
+                </div>
+                <br>
+                <input type="submit" value="Registrarme" class="btn btn-success"
+                    [disabled]="registerForm.invalid" />
+            </form>
+        </div>
+    </div>
+</div>

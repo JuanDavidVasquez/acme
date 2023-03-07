@@ -23,9 +23,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui/dist/jquery-ui.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/gsap/dist/all.js",
+              "node_modules/gsap/dist/ScrollTrigger.min.js",
+              "node_modules/gsap/dist/Draggable.min.js",
+              "node_modules/gsap/dist/EasePack.min.js",
+              "node_modules/gsap/dist/EaselPlugin.min.js",
+              "node_modules/gsap/dist/gsap.min.js",
+              "node_modules/gsap/dist/ScrollTrigger.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -97,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f361d239-7296-4f81-82ef-58fbe3952d48"
   }
 }
