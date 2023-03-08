@@ -1,0 +1,15 @@
+h1{
+    padding: 3rem;
+}
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    padding: 1rem;
+    list-style: none;
+    border: 0.5px solid #ccc;
+    font-size: xx-large;
+}
